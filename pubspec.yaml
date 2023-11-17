@@ -16,9 +16,9 @@ dependencies:
   tflite_flutter: ^0.10.0
   tuple: ^2.0.0
   camera: ^0.10.4
+  image: ^4.0.17
 
 dependency_overrides:
-  image: ^3.3.0
   ffi: ^1.0.0
 
 dev_dependencies:

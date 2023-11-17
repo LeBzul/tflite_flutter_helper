@@ -1,4 +1,5 @@
 import 'dart:math' show Point;
+
 import 'package:image/image.dart' show Image, copyRotate;
 import 'package:tflite_flutter_helper/src/image/image_operator.dart';
 import 'package:tflite_flutter_helper/src/image/tensor_image.dart';
@@ -18,7 +19,7 @@ class Rot90Op extends ImageOperator {
   /// with the output.
   @override
   TensorImage apply(TensorImage image) {
-    Image rotated = copyRotate(image.image, 90 * _numRotation);
+    Image rotated = copyRotate(image.image, angle: 90 * _numRotation);
     image.loadImage(rotated);
     return image;
   }
