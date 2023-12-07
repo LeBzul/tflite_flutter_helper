@@ -1,6 +1,7 @@
 import 'dart:math' show Point;
-import 'package:image/image.dart' show Image, drawPixel;
 import 'dart:math';
+
+import 'package:image/image.dart' show Image, drawPixel;
 import 'package:tflite_flutter_helper/src/image/image_operator.dart';
 import 'package:tflite_flutter_helper/src/image/ops/resize_op.dart';
 import 'package:tflite_flutter_helper/src/image/tensor_image.dart';
@@ -25,7 +26,10 @@ class ResizeWithCropOrPadOp implements ImageOperator {
   /// You can pass whith [_cropLeft] and [_cropTop] top-left position of a crop to overide the default centered one.
   ResizeWithCropOrPadOp(this._targetHeight, this._targetWidth,
       [this._cropLeft, this._cropTop])
-      : _output = Image(_targetWidth, _targetHeight);
+      : _output = Image(
+          width: _targetWidth,
+          height: _targetHeight,
+        );
 
   /// Applies the defined resizing with cropping or/and padding on [image] and returns the
   /// result.
